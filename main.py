@@ -1,5 +1,5 @@
 import re
-import app
+from app import app
 
 
 print("start....")
