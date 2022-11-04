@@ -9,7 +9,7 @@ redis_conn = redis.Redis(connection_pool= redis_pool)
 
 @api_.route("/hs")
 def sum():
-    return "ok!xing"
+    return "hello! lyc"
 
 
 @api_.route("/add")
