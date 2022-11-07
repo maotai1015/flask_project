@@ -6,7 +6,7 @@ ENV APP_NAME=myproject \
 COPY . /home/${APP_NAME}/flask_project
 WORKDIR /home/${APP_NAME}/flask_project
 
-RUN pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
+RUN pip install -r ./requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
 
 # RUN yum install gcc python36-devel
 
