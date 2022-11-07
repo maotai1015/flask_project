@@ -1,7 +1,7 @@
 FROM python:3.8
 
-ENV APP_NAME = myproject \
-    APP_PORT = 8081 
+ENV APP_NAME=myproject \
+    APP_PORT=8081 
 
 COPY . /home/${APP_NAME}/flask_project
 WORKDIR /home/${APP_NAME}/flask_project
