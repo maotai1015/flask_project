@@ -13,4 +13,5 @@ RUN pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
 EXPOSE 22
 EXPOSE ${APP_PORT}
 
-CMD ["uwsgi","uwsgi.ini"]
+# CMD ["uwsgi","uwsgi.ini"]
+CMD ["flask","run"]
