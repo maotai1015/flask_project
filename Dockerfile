@@ -3,8 +3,8 @@ FROM python:3.8
 ENV APP_NAME = myproject \
     APP_PORT = 8081 
 
-COPY . /home/${APP_NAME}/flask_test
-WORKDIR /home/${APP_NAME}/flask_test
+COPY . /home/${APP_NAME}/flask_project
+WORKDIR /home/${APP_NAME}/flask_project
 
 RUN pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
 
