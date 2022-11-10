@@ -1,5 +1,5 @@
 from flask import Blueprint
-
+from snmp_cmds import snmpwalk
 api_ = Blueprint("v1", __name__, url_prefix="/v1")
 
 import redis
