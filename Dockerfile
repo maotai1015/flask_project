@@ -1,4 +1,4 @@
-FROM python:3.6
+FROM python:3.6-alpine
 
 ENV APP_NAME=myproject \
     APP_PORT=8082 
@@ -6,9 +6,13 @@ ENV APP_NAME=myproject \
 COPY . /home/${APP_NAME}/flask_project
 WORKDIR /home/${APP_NAME}/flask_project
 
-RUN apt-get update && apt-get install -y snmp
-RUN pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
-
+RUN apk update && apk upgrade \
+    && apk add -U tzdata ca-certificates \
+    && apk add --no-cache --virtual .build-deps gcc g++ libffi-dev musl-dev libc-dev zlib-dev jpeg-dev freetype-dev \
+    && apk add net-snmp \
+    && apk add --no-cache --no-progress openssh redis \
+    && pip install --no-cache-dir -r ./requirements.txt \
+    && apk del .build-deps
 # RUN yum install gcc python36-devel
 
 EXPOSE 22
