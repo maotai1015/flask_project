@@ -5,6 +5,9 @@ api = Api(api_bp)
 
 
 def hs():
+    print("2222")
     return "hello! zjx"
 
+
+print("123")
 
