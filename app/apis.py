@@ -5,6 +5,6 @@ api = Api(api_bp)
 
 
 def hs():
-    return "hello! zjx"
+    return "hello! lyc"
 
 
